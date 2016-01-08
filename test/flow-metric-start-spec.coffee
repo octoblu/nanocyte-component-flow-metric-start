@@ -18,6 +18,8 @@ describe 'FlowMetricStart', ->
             deploymentUuid: 'some-deployment-uuid'
 
       it 'should return a message', ->
+        expect(@result.payload.date).to.be.closeTo Date.now(), 1000
+        delete @result.payload.date
         expect(@result).to.deep.equal
           devices: ['some-hardcoded-uuid']
           payload:
@@ -37,6 +39,8 @@ describe 'FlowMetricStart', ->
             deploymentUuid: 'some-other-deployment-uuid'
 
       it 'should return a message', ->
+        expect(@result.payload.date).to.be.closeTo Date.now(), 1000
+        delete @result.payload.date
         expect(@result).to.deep.equal
           devices: ['some-softcoded-uuid']
           payload:

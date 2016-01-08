@@ -6,6 +6,7 @@ class FlowMetricStart extends ReturnValue
 
     devices: [config.deviceId]
     payload:
+      date: Date.now()
       userUuid: 'userUuid'
       deploymentUuid: config.deploymentUuid
       application: 'flow-runner'
